@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# CBA read-only DB query wrapper (the only DB entry point CBA's agent may call).
+exec python3 "$(cd "$(dirname "$0")" && pwd)/db_tool.py" "$@"

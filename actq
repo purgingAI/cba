@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# CBA action wrapper (write ops). Only allow-listed for write-enabled instances.
+exec python3 "$(cd "$(dirname "$0")" && pwd)/action_tool.py" "$@"

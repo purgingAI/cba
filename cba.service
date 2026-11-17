@@ -1,0 +1,20 @@
+[Unit]
+Description=CBA — Code Base Assistant (Telegram <-> Claude, read-only)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# EDIT these for your server:
+User=sagar-uniyal
+WorkingDirectory=/home/sagar-uniyal/cba
+ExecStart=/usr/bin/env bash /home/sagar-uniyal/cba/cba.sh
+Restart=always
+RestartSec=5
+# Ensure the claude CLI is on PATH for the service user:
+Environment=PATH=/home/sagar-uniyal/.local/bin:/usr/local/bin:/usr/bin:/bin
+# Optional: point at the user's Claude config/credentials
+Environment=HOME=/home/sagar-uniyal
+
+[Install]
+WantedBy=multi-user.target
